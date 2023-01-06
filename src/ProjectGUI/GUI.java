@@ -38,9 +38,9 @@ public class GUI implements ActionListener {
 	// color menu
 	JMenuItem iColor1,iColor2,iColor3;
 
-	Function_Format format = new FunctionFormatBuilder(this)
-			.setFontType("Arial")
-			.build();
+	Function_Format format = new FunctionFormatBuilder(this)  // calls builder with setFont type
+			.setFontType("Arial")  // sets fontType
+			.build(); // builds and returns new format 
 	// integration between Function File class and GUI classes
 	FunctionFile funcs = new FunctionFile(this);
 	
@@ -71,7 +71,7 @@ public class GUI implements ActionListener {
 		createEditMenu();
 		createFormatMenu();
 		createColorMenu();
-		color.changeColor("Blue");
+		color.changeColor("Blue");  // set background color blue as default
 		window.setVisible(true);
 	}
 
@@ -104,20 +104,20 @@ public class GUI implements ActionListener {
 		window.add(scrollPane);
 	}
 
-	public void createMenuBar() {
+	public void createMenuBar() {  // Create Menu Bar
 		menuBar = new JMenuBar();
 		window.setJMenuBar(menuBar);
 
-		fileMenu = new JMenu("File");
+		fileMenu = new JMenu("File");  // add bar File
 		menuBar.add(fileMenu);
 
-		menuEdit = new JMenu("Edit");
+		menuEdit = new JMenu("Edit");   // add bar Edit
 		menuBar.add(menuEdit);
 
-		menuFormat = new JMenu("Format");
+		menuFormat = new JMenu("Format");   // add bar Format
 		menuBar.add(menuFormat);
 
-		menuColor = new JMenu("Color");
+		menuColor = new JMenu("Color");   // add bar Color
 		menuBar.add(menuColor);
 	}
 
@@ -167,48 +167,48 @@ public class GUI implements ActionListener {
 		iWrap.setActionCommand("Word Wrap");
 		menuFormat.add(iWrap);
 
-		menuFont = new JMenu("Font");
+		menuFont = new JMenu("Font");  // add menu tab called Font
 		menuFormat.add(menuFont);
 
-		iFontArial = new JMenuItem("Arial");
+		iFontArial = new JMenuItem("Arial");  // add new menu item Arial and setActionFormat for it
 		iFontArial.addActionListener(this);
 		iFontArial.setActionCommand("Arial");
 		menuFont.add(iFontArial);
 
-		iFontCSMS = new JMenuItem("Comic Sans MS");
+		iFontCSMS = new JMenuItem("Comic Sans MS");  // add new menu item Comic Sans MS and setActionFormat for it
 		iFontCSMS.addActionListener(this);
-		iFontCSMS.setActionCommand("Comic Sans MS");
+		iFontCSMS.setActionCommand("Comic Sans MS");  
 		menuFont.add(iFontCSMS);
 
-		menuFontSize = new JMenu("Font Size");
+		menuFontSize = new JMenu("Font Size");  // add menu new tab called Font size
 		menuFormat.add(menuFontSize);
 
-		iFontSize8 = new JMenuItem("8");
+		iFontSize8 = new JMenuItem("8");  // set action listener for font size 8
 		iFontSize8.addActionListener(this);
 		iFontSize8.setActionCommand("size8");
 		menuFontSize.add(iFontSize8);
 
-		iFontSize12 = new JMenuItem("12");
+		iFontSize12 = new JMenuItem("12");  // set action listener for font size 12
 		iFontSize12.addActionListener(this);
 		iFontSize12.setActionCommand("size12");
 		menuFontSize.add(iFontSize12);
 
-		iFontSize16 = new JMenuItem("16");
-		iFontSize16.addActionListener(this);
+		iFontSize16 = new JMenuItem("16");  // set action listener for font size 16
+		iFontSize16.addActionListener(this); 
 		iFontSize16.setActionCommand("size16");
 		menuFontSize.add(iFontSize16);
 
-		iFontSize20 = new JMenuItem("20");
+		iFontSize20 = new JMenuItem("20");  // set action listener for font size 20
 		iFontSize20.addActionListener(this);
 		iFontSize20.setActionCommand("size20");
 		menuFontSize.add(iFontSize20);
 
-		iFontSize24 = new JMenuItem("24");
+		iFontSize24 = new JMenuItem("24");  // set action listener for font size 24
 		iFontSize24.addActionListener(this);
 		iFontSize24.setActionCommand("size24");
 		menuFontSize.add(iFontSize24);
 
-		iFontSize28 = new JMenuItem("28");
+		iFontSize28 = new JMenuItem("28");  // set action listener for font size 28
 		iFontSize28.addActionListener(this);
 		iFontSize28.setActionCommand("size28");
 		menuFontSize.add(iFontSize28);
@@ -250,15 +250,15 @@ public class GUI implements ActionListener {
 			case "Word Wrap": format.wordWrap(); break;
 			case "Arial": format.setFontType(command);break;
 			case "Comic Sans MS": format.setFontType(command) ;break;
-			case "size8" : format.setFontSize(8); break;
-			case "size12" : format.setFontSize(12); break;
-			case "size16" : format.setFontSize(16); break;
-			case "size20" : format.setFontSize(20); break;
-			case "size24" : format.setFontSize(24); break;
-			case "size28" : format.setFontSize(28); break;
-			case "White": color.changeColor(command);break;
-			case "Black": color.changeColor(command);break;
-			case "Blue": color.changeColor(command);break;
+			case "size8" : format.setFontSize(8); break;  // change format text size to 8
+			case "size12" : format.setFontSize(12); break;  // change format text size to 12
+			case "size16" : format.setFontSize(16); break;  // change format text size to 16
+			case "size20" : format.setFontSize(20); break;  // change format text size to 20
+			case "size24" : format.setFontSize(24); break;  // change format text size to 24
+			case "size28" : format.setFontSize(28); break;  // change format text size to 28
+			case "White": color.changeColor(command);break;  // change background Color to white
+			case "Black": color.changeColor(command);break;  // change background Color to Black
+			case "Blue": color.changeColor(command);break;  // change background Color to Blue
 
 
 		}
